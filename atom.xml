@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.iiibuwan.com/"/>
-  <updated>2017-11-25T09:10:58.851Z</updated>
+  <updated>2017-11-25T15:36:52.993Z</updated>
   <id>http://blog.iiibuwan.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GTA5线上模式快速卡单人战局</title>
+    <link href="http://blog.iiibuwan.com/2017/11/25/gta5single/"/>
+    <id>http://blog.iiibuwan.com/2017/11/25/gta5single/</id>
+    <published>2017-11-25T15:34:10.000Z</published>
+    <updated>2017-11-25T15:36:52.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.进入公共战局之后，按键盘Alt+Enter切换成窗口化模式<br>2.然后后台随便开一个窗口，比如任务管理器，按Alt+Tab让任务管理器处于置顶<br>3.然后右键点GTA5的标题栏<br>4.等10秒<br>5.最后左键点击游戏画面即可，可以按Alt+Enter切换回全屏</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.进入公共战局之后，按键盘Alt+Enter切换成窗口化模式&lt;br&gt;2.然后后台随便开一个窗口，比如任务管理器，按Alt+Tab让任务管理器处于置顶&lt;br&gt;3.然后右键点GTA5的标题栏&lt;br&gt;4.等10秒&lt;br&gt;5.最后左键点击游戏画面即可，可以按Alt+Enter切换
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>在购买Origin access之前应该知道这些</title>
