@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.iiibuwan.com/"/>
-  <updated>2017-11-24T11:22:14.386Z</updated>
+  <updated>2017-11-25T09:17:20.795Z</updated>
   <id>http://blog.iiibuwan.com/</id>
   
   <author>
@@ -17,23 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.iiibuwan.com/2017/11/24/hello-world/"/>
-    <id>http://blog.iiibuwan.com/2017/11/24/hello-world/</id>
-    <published>2017-11-24T11:22:14.386Z</published>
-    <updated>2017-11-24T11:22:14.386Z</updated>
+    <title>Warframe更新慢怎么办</title>
+    <link href="http://blog.iiibuwan.com/2017/11/25/warframe/"/>
+    <id>http://blog.iiibuwan.com/2017/11/25/warframe/</id>
+    <published>2017-11-25T09:13:12.000Z</published>
+    <updated>2017-11-25T09:17:20.795Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>参考之前的代理GTA5教程<br>但是第9步不一样，Warframe的程序名为<br><code>Launcher.exe;Warframe.x64.exe;Warframe.exe</code><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106190259.jpg" alt=""><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106185297.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;参考之前的代理GTA5教程&lt;br&gt;但是第9步不一样，Warframe的程序名为&lt;br&gt;&lt;code&gt;Launcher.exe;Warframe.x64.exe;Warframe.exe&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;https://iiibuwan.com/wp-c
       
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>在购买Origin access之前应该知道这些</title>
+    <link href="http://blog.iiibuwan.com/2017/08/21/ea/"/>
+    <id>http://blog.iiibuwan.com/2017/08/21/ea/</id>
+    <published>2017-08-21T09:07:13.000Z</published>
+    <updated>2017-11-25T09:10:58.851Z</updated>
+    
+    <content type="html"><![CDATA[<p>Origin access（Origin会员）是一种租赁模式，在会员有效期内可以玩绝大部分的Origin老游戏，比单独买游戏要划算很多。支持中国区paypal支付，paypal可以绑定银联卡（除了农行）。暂时不建议跨区买会员，如果客户端老是在转圈的话，建议登陆origin官网购买。购买会员之后，必须使用香港或者台湾IP登陆Origin，然后选取你想玩的游戏入库，否则会没中文。还有一件事就是，Origin会员是会自动续费的，如果下个月不用了，必须进入这个网址取消会员资格，下个月就不会自动扣费。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Origin access（Origin会员）是一种租赁模式，在会员有效期内可以玩绝大部分的Origin老游戏，比单独买游戏要划算很多。支持中国区paypal支付，paypal可以绑定银联卡（除了农行）。暂时不建议跨区买会员，如果客户端老是在转圈的话，建议登陆origin官
+      
+    
+    </summary>
+    
+    
+      <category term="EA" scheme="http://blog.iiibuwan.com/tags/EA/"/>
     
   </entry>
   
