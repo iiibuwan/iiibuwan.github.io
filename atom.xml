@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.iiibuwan.com/"/>
-  <updated>2017-11-25T09:17:20.795Z</updated>
+  <updated>2017-11-25T09:10:58.851Z</updated>
   <id>http://blog.iiibuwan.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Warframe更新慢怎么办</title>
-    <link href="http://blog.iiibuwan.com/2017/11/25/warframe/"/>
-    <id>http://blog.iiibuwan.com/2017/11/25/warframe/</id>
-    <published>2017-11-25T09:13:12.000Z</published>
-    <updated>2017-11-25T09:17:20.795Z</updated>
-    
-    <content type="html"><![CDATA[<p>参考之前的代理GTA5教程<br>但是第9步不一样，Warframe的程序名为<br><code>Launcher.exe;Warframe.x64.exe;Warframe.exe</code><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106190259.jpg" alt=""><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106185297.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;参考之前的代理GTA5教程&lt;br&gt;但是第9步不一样，Warframe的程序名为&lt;br&gt;&lt;code&gt;Launcher.exe;Warframe.x64.exe;Warframe.exe&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;https://iiibuwan.com/wp-c
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>在购买Origin access之前应该知道这些</title>
@@ -57,6 +36,27 @@
     
     
       <category term="EA" scheme="http://blog.iiibuwan.com/tags/EA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Warframe更新慢怎么办</title>
+    <link href="http://blog.iiibuwan.com/2017/07/21/warframe/"/>
+    <id>http://blog.iiibuwan.com/2017/07/21/warframe/</id>
+    <published>2017-07-21T09:13:12.000Z</published>
+    <updated>2017-11-25T09:25:18.241Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考之前的代理GTA5教程<br>但是第9步不一样，Warframe的程序名为<br><code>Launcher.exe;Warframe.x64.exe;Warframe.exe</code><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106190259.jpg" alt=""><br><img src="https://iiibuwan.com/wp-content/uploads/2017/07/2017071106185297.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考之前的代理GTA5教程&lt;br&gt;但是第9步不一样，Warframe的程序名为&lt;br&gt;&lt;code&gt;Launcher.exe;Warframe.x64.exe;Warframe.exe&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;https://iiibuwan.com/wp-c
+      
+    
+    </summary>
+    
     
   </entry>
   
