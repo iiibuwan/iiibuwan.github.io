@@ -60,4 +60,25 @@
     
   </entry>
   
+  <entry>
+    <title>Debian9登场</title>
+    <link href="http://blog.iiibuwan.com/2017/06/24/debian9/"/>
+    <id>http://blog.iiibuwan.com/2017/06/24/debian9/</id>
+    <published>2017-06-24T14:06:47.000Z</published>
+    <updated>2017-11-25T14:13:22.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>Debian最新版下载页面，地址永远有效<br><a href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/" target="_blank" rel="noopener">https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/</a><br>建议使用<a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener">Universal USB Installer</a>制作Linux U盘启动盘，别用UltraISO制作</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Debian最新版下载页面，地址永远有效&lt;br&gt;&lt;a href=&quot;https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
 </feed>
