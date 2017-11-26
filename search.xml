@@ -4,6 +4,9 @@
     <title><![CDATA[GTA5线上模式快速卡单人战局]]></title>
     <url>%2F2017%2Fgta5single%2F</url>
     <content type="text"><![CDATA[1.进入公共战局之后，按键盘Alt+Enter切换成窗口化模式2.然后后台随便开一个窗口，比如任务管理器，按Alt+Tab让任务管理器处于置顶3.然后右键点GTA5的标题栏4.等10秒5.最后左键点击游戏画面即可，可以按Alt+Enter切换回全屏]]></content>
+      <tags>
+        <tag>GTA5</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[在购买Origin access之前应该知道这些]]></title>
@@ -17,10 +20,45 @@
     <title><![CDATA[Warframe更新慢怎么办]]></title>
     <url>%2F2017%2Fwarframe%2F</url>
     <content type="text"><![CDATA[参考之前的代理GTA5教程但是第9步不一样，Warframe的程序名为Launcher.exe;Warframe.x64.exe;Warframe.exe]]></content>
+      <tags>
+        <tag>Warframe</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Debian9登场]]></title>
     <url>%2F2017%2Fdebian9%2F</url>
     <content type="text"><![CDATA[Debian最新版下载页面，地址永远有效https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/建议使用Universal USB Installer制作Linux U盘启动盘，别用UltraISO制作]]></content>
+      <tags>
+        <tag>Debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Origin战地1离线包安装教程]]></title>
+    <url>%2F2017%2Fbfsetup%2F</url>
+    <content type="text"><![CDATA[该教程适用于以下情况：1.去网吧玩战地2.重装系统和Origin后发现战地显示尚未安装3.Origin下载游戏太慢，去别的网站下载了一个战地离线包教程点击这里(忘记给视频加声音了)]]></content>
+      <tags>
+        <tag>EA</tag>
+        <tag>Origin</tag>
+        <tag>战地</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[手动备份DOOM和传送门骑士的存档]]></title>
+    <url>%2F2017%2Fsave%2F</url>
+    <content type="text"><![CDATA[1.在重装系统或者换电脑之前，点击开始菜单-运行，输入%USERPROFILE%并确定。2.双击保存的游戏，把里面的id Software文件夹和portal_knights文件夹复制到其他地方（比如U盘）备份。3.然后重装系统或者换电脑。4.在新系统或者新电脑上点击开始菜单-运行，输入%USERPROFILE%并确定，双击保存的游戏，把id Software文件夹和portal_knights文件夹的备份复制回来。5.运行游戏。如果DOOM启动不了，请删除id Software\DOOM\base里面的DOOMConfig.local文件。]]></content>
+      <tags>
+        <tag>DOOM</tag>
+        <tag>传送门骑士</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[安利一个小众的FPS游戏]]></title>
+    <url>%2F2017%2Fcube2%2F</url>
+    <content type="text"><![CDATA[游戏名字叫Cube2:Sauerbraten，是一个免费开源游戏项目，游戏客户端也就500多MB，模式有死亡竞赛、PVE、夺旗、跑酷等，如果你喜欢Quake，那么强烈推荐你试试这个游戏。最神奇的是，连接300ms以上的服务器丝毫不卡，因为数据以本地为准，所以有时会出现互相开枪，双方都被打中的情况。游戏官网http://sauerbraten.org/Windows客户端放网盘了 http://pan.baidu.com/s/1c12rNqC 密码：vf22]]></content>
+      <tags>
+        <tag>Cube2</tag>
+        <tag>Sauerbraten</tag>
+        <tag>FPS</tag>
+      </tags>
   </entry>
 </search>
