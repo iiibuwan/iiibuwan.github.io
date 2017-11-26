@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[GTA5线上模式快速卡单人战局]]></title>
-    <url>%2F2017%2Fgta5single%2F</url>
-    <content type="text"><![CDATA[1.进入公共战局之后，按键盘Alt+Enter切换成窗口化模式2.然后后台随便开一个窗口，比如任务管理器，按Alt+Tab让任务管理器处于置顶3.然后右键点GTA5的标题栏4.等10秒5.最后左键点击游戏画面即可，可以按Alt+Enter切换回全屏]]></content>
-      <tags>
-        <tag>GTA5</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[在购买Origin access之前应该知道这些]]></title>
     <url>%2F2017%2Fea%2F</url>
     <content type="text"><![CDATA[Origin access（Origin会员）是一种租赁模式，在会员有效期内可以玩绝大部分的Origin老游戏，比单独买游戏要划算很多。支持中国区paypal支付，paypal可以绑定银联卡（除了农行）。暂时不建议跨区买会员，如果客户端老是在转圈的话，建议登陆origin官网购买。购买会员之后，必须使用香港或者台湾IP登陆Origin，然后选取你想玩的游戏入库，否则会没中文。还有一件事就是，Origin会员是会自动续费的，如果下个月不用了，必须进入这个网址取消会员资格，下个月就不会自动扣费。]]></content>
@@ -30,6 +22,14 @@
     <content type="text"><![CDATA[Debian最新版下载页面，地址永远有效https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/建议使用Universal USB Installer制作Linux U盘启动盘，别用UltraISO制作]]></content>
       <tags>
         <tag>Debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GTA5线上模式快速卡单人战局]]></title>
+    <url>%2F2017%2Fgta5single%2F</url>
+    <content type="text"><![CDATA[1.进入公共战局之后，按键盘Alt+Enter切换成窗口化模式2.然后后台随便开一个窗口，比如任务管理器，按Alt+Tab让任务管理器处于置顶3.然后右键点GTA5的标题栏4.等10秒5.最后左键点击游戏画面即可，可以按Alt+Enter切换回全屏]]></content>
+      <tags>
+        <tag>GTA5</tag>
       </tags>
   </entry>
   <entry>
@@ -60,5 +60,15 @@
         <tag>Sauerbraten</tag>
         <tag>FPS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ballistic Overkill 硝云弹雨常见问题解答]]></title>
+    <url>%2F2017%2Fbo%2F</url>
+    <content type="text"><![CDATA[中国玩家steam组游戏商店页面 新人必看1.进群后请修改群名片为Steam昵称。2.游戏默认英文，请点击右上角齿轮，找到LANGUAGE，把ENGLISH改为中文。3.本游戏不需要外服加速器，不支持XP系统4.如果游戏闪退或者黑屏，下载群文件DirectX修复工具进行修复，如果问题依旧，请使用DDU把显卡驱动卸载，然后安装最新版本显卡驱动。显卡驱动下载：NVIDIA AMD intel5.平时点击Play NOW就可以玩了，在设置里面可以勾选匹配区域，建议只选Asia和China。如果想单独做成就，就自己新建房间做主机AS/CN，二营长有一个隐藏成就指南。6.如果提示加入比赛出错，刷新是没用的，要重启游戏，这是服务器列表的Bug。7.目前游戏有四种模式：自由模式(个人竞技)，团队死亡竞赛(TDM)，据点之王(山丘之王)，据点争夺战(征服)8.请佩戴耳机进行游戏，可以听清附近敌人(特别是暗影)的声音9.如果走着走着就卡住了，应该是输入法卡住了，win7可以通过Ctrl+空格键切换英文键盘，win10请点击这里10.游戏时间每满2小时会掉落一个箱子，每个箱子掉落冷却时间为48小时，详情点击这里11.如果发现12人房间进了13个人，这真的是Bug，观众人数并不会加在玩家人数上面。出生漂浮在空中，这个是Bug。观察别人时看不到地图，也是Bug。12.游戏没有PVE，没有BOT，没有语音13.按K自杀，按E上榴弹，按F用小刀，按V发指令，按Enter输入文字，按键可以在设置里面改 外挂举报1.点击steam左上角视图——玩家，找到作弊者，进入他的个人主页，右键复制URL2.在群共享里面下载录像软件，然后把作弊者录下来。3.上传到任意视频网站，复制视频地址4.把作弊者个人资料链接和视频链接发送到邮箱support@aquiris.com.br，标题写hacker report如果确定是挂，基本最迟隔天就能封（周末和节假日顺延） 游戏BUG反馈在steam库右键点击游戏——属性——本地文件——浏览本地文件，打开BallisticOverkill_Data文件夹，把里面的output_log发送到以下邮箱support@aquiris.com.br标题和内容要求全英文，信件标题清晰，对bug有具体描述，最好附带截图或者视频，详情点击这里 官方联系方式discord（主要联系方式）Steam社区开发版官方论坛facebookTwittertumblr 服务器问题如果你是国内在校大学生，可以到美团云购买6个月的云服务器，并按照教程搭建专用服务器。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[newifi mini路由器刷padavan固件教程]]></title>
+    <url>%2F2017%2Fpadavan%2F</url>
+    <content type="text"><![CDATA[刷机教程懒得写教程了，我只是搬运工教程点这里 补充一下Breed和固件都不需要在教程里面下载，直接在这里下载最新版Breed详细说明Breed下载下载里面的breed-mt7620-lenovo-y1.bin固件详细说明固件下载点击最新日期的文件夹，然后下载里面的RT-AC54U-GPIO-11-newifimini-128M_3.4.3.9-099.trx 此固件管理页面http://my.router/ip地址192.168.123.1用户名admin密码admin2.4GHz无线名称PDCN5GHz无线名称PDCN_5G无线密码1234567890 游戏代理设置注意！下载或更新游戏时请在路由器关闭$$，或者改用流量消耗比例小的节点 普通游戏（比如GTA5）只需要代理两个TCP端口80,443如果你只玩枪火游侠和普通游戏，那就填80,443,9000如果你需要代理战地，就需要填80,443,5222,9988,17502,17504,42127,42230,10000:10200 特别注意2017年8月22日更新 让Steam/PS4/Xboxone下载域名使用国内DNS解析到国内IP，避免消耗出国流量依次点击路由器菜单：高级设置——内部网络 (LAN) ——DHCP 服务器然后拉下去点击 自定义配置文件 “dnsmasq.servers” 把下面内容写进去并应用server=/cdn.dota2.com.cn/223.5.5.5server=/telecom.dota2.wmsj.cn/223.5.5.5server=/broadcast.mileweb.steampowered.com.8686c.com/223.5.5.5server=/cdn.mileweb.cs.steampowered.com.8686c.com/223.5.5.5server=/cdn.steamstatic.com.8686c.com/223.5.5.5server=/gs2.ww.prod.dl.playstation.net/223.5.5.5server=/.gs2.sonycoment.loris-e.llnwd.net/223.5.5.5server=/dlassets.xboxlive.com/223.5.5.5server=/assets1.xboxlive.com/223.5.5.5server=/assets2.xboxlive.com/223.5.5.5223.5.5.5是DNS地址，自己可以改成其他国内DNS地址，比如180.76.76.76/119.29.29.29/114.114.114.114 避开不需要代理的域名设置绕开steam等常见域名，减少$$流量消耗。在使用迅雷下或者BT下载工具时，务必关闭SS，否则会影响其他用户使用。 #key零售网站WAN!www.paypal.comWAN!www.gamersgate.comWAN!cn.gamersgate.comWAN!www.humblebundle.comWAN!www.bundlestars.com #PSN下载域名WAN!zeus.dl.playstation.netWAN!ares.dl.playstation.netWAN!poseidon.dl.playstation.netWAN!gs2.ww.prod.dl.playstation.netWAN!post.net.playstation.netWAN!get.net.playstation.net #Xbox One下载域名WAN!dlassets.xboxlive.comWAN!assets1.xboxlive.comWAN!assets2.xboxlive.com #Warframe更新域名WAN!content.warframe.com #Uplay下载域名和中文商城WAN!uplaypc-s-ubisoft.cdn.ubi.comWAN!store.ubi.com #Origin下载域名WAN!origin-a.akamaihd.netWAN!lvlt.cdn.ea.comWAN!ssl-lvlt.cdn.ea.com #GOG下载域名WAN!galaxy-client-update.gog.comWAN!cdn.gog.com #Steam主要域名WAN!store.steampowered.comWAN!steamcommunity.comWAN!cdn.akamai.steamstatic.comWAN!cdn.edgecast.steamstatic.comWAN!api.steampowered.comWAN!help.steampowered.comWAN!media.steampowered.comWAN!store.edgecast.steamstatic.comWAN!store.staging.steampowered.comWAN!storefront.steampowered.comWAN!steamcommunity-a.akamaihd.netWAN!cdn.steampowered.comWAN!cdn.steamcommunity.comWAN!cdn.store.steampowered.comWAN!cdn.highwinds.cs.steampowered.comWAN!cloud.steampowered.comWAN!clientconfig.akamai.steamstatic.comWAN!client-download.steampowered.comWAN!community.edgecast.steamstatic.comWAN!images.akamai.steamusercontent.comWAN!gds4.steampowered.com #Steam香港下载区WAN!valve1001.steampipe.steamcontent.comWAN!valve1002.steampipe.steamcontent.comWAN!valve1003.steampipe.steamcontent.comWAN!valve1008.steampipe.steamcontent.comWAN!valve1009.steampipe.steamcontent.comWAN!valve1010.steampipe.steamcontent.comWAN!valve1011.steampipe.steamcontent.comWAN!valve1900.steampipe.steamcontent.comWAN!valve1901.steampipe.steamcontent.com 把steam下载地区设置为国内务必把steam下载地区改为国内节点，否则下载时会消耗流量。如果国内下载速度不理想，请使用hosts修改工具进行修改。]]></content>
   </entry>
 </search>
