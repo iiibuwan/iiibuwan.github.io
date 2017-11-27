@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="硝云弹雨,Ballistic Overkill," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自己搭建一个社区服务器">
+<meta name="keywords" content="硝云弹雨,Ballistic Overkill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ballistic Overkill 硝云弹雨服务器搭建">
+<meta property="og:url" content="http://iiibuwan.com/2017/boserver/index.html">
+<meta property="og:site_name" content="苹罐博客">
+<meta property="og:description" content="自己搭建一个社区服务器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/201702040240377.png">
+<meta property="og:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/201702040247575.png">
+<meta property="og:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012250.png">
+<meta property="og:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012362.png">
+<meta property="og:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012543.png">
+<meta property="og:updated_time" content="2017-11-27T07:46:25.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ballistic Overkill 硝云弹雨服务器搭建">
+<meta name="twitter:description" content="自己搭建一个社区服务器">
+<meta name="twitter:image" content="https://img.iiibuwan.com/wp-content/uploads/2017/02/201702040240377.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://iiibuwan.com/2017/boserver/"/>
+
+
+
+
+
+  <title>Ballistic Overkill 硝云弹雨服务器搭建 | 苹罐博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苹罐博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">喵喵喵</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://iiibuwan.com/2017/boserver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苹罐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苹罐博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ballistic Overkill 硝云弹雨服务器搭建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T14:29:01+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  自己搭建一个社区服务器
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>系统：Debian8 64位<br>内存：≥384MB<br>上行带宽：设置2名观众时，1Mbps带10个玩家，2Mbps带14个玩家，3Mbps带16个玩家<br>SSH工具：Xshell 5</p>
+<h2 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h2><p>首先打开Xshell，新建会话<br><img src="https://img.iiibuwan.com/wp-content/uploads/2017/02/201702040240377.png" alt=""><br><img src="https://img.iiibuwan.com/wp-content/uploads/2017/02/201702040247575.png" alt=""><br><img src="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012250.png" alt=""><br><img src="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012362.png" alt=""><br>如果中间有断开连接，点击这里重新连接<br><img src="https://img.iiibuwan.com/wp-content/uploads/2017/02/2017020403012543.png" alt=""><br>正常登陆后，会显示类似以下的信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Connecting to 119.29.29.66:22...</span><br><span class="line">Connection established.</span><br><span class="line">To escape to local shell, press &apos;Ctrl+Alt+]&apos;.</span><br><span class="line"></span><br><span class="line">The programs included with the Debian GNU/Linux system are free software;</span><br><span class="line">the exact distribution terms for each program are described in the</span><br><span class="line">individual files in /usr/share/doc/*/copyright.</span><br><span class="line"></span><br><span class="line">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent</span><br><span class="line">permitted by applicable law.</span><br><span class="line">Last login: Sat Feb 4 10:59:35 2017 from 122.238.31.266</span><br><span class="line">root@VM-53-26-debian:~# </span><br></pre></td></tr></table></figure></p>
+<h2 id="修改DNS地址"><a href="#修改DNS地址" class="headerlink" title="修改DNS地址"></a>修改DNS地址</h2><p>近期阿里和腾讯的DNS间歇性抽风，改成114比较稳妥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/resolv.conf</span><br></pre></td></tr></table></figure><br>按一下键盘的i键进入插入模式（左下角会出现– INSERT –的字样）<br>把nameserver后面的DNS地址改成114的，注意空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 114.114.115.115</span><br><span class="line">options timeout:1 rotate</span><br></pre></td></tr></table></figure><br>改完之后按一下键盘Esc退出插入模式，然后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure><br>就完成DNS的修改了<br>如果你的服务器在海外，建议改成8.8.8.8和8.8.4.4</p>
+<h2 id="修改Debian8软件源为163源"><a href="#修改Debian8软件源为163源" class="headerlink" title="修改Debian8软件源为163源"></a>修改Debian8软件源为163源</h2><p>国内服务器可以改成163源，速度比较快<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>按一下键盘的i键进入插入模式（左下角会出现– INSERT –的字样）<br>把原来的内容删掉，换成以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.163.com/debian/ jessie main non-free contrib</span><br><span class="line">deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib</span><br><span class="line">deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian/ jessie main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib</span><br><span class="line">deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib</span><br></pre></td></tr></table></figure><br>改完之后按一下键盘Esc退出插入模式，然后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure><br>更新一下软件源列表使其生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装使用screen"><a href="#安装使用screen" class="headerlink" title="安装使用screen"></a>安装使用screen</h2><p>安装screen，这是一个可以让BO服务端在后台运行的多窗口工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y screen</span><br></pre></td></tr></table></figure><br>这里说一下screen的常见用法<br>新建一个名为bo的窗口，注意S是大写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S bo</span><br></pre></td></tr></table></figure><br>按Ctrl+A，松开手，再按一下D，就能让bo窗口在后台运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[detached from 650.bo]</span><br><span class="line">root@VM-53-26-debian:~# </span><br></pre></td></tr></table></figure><br>列出当前screen所有窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@VM-53-26-debian:~# screen -ls</span><br><span class="line">There is a screen on:</span><br><span class="line">650.bo (02/04/17 11:24:56) (Detached)</span><br><span class="line">1 Socket in /var/run/screen/S-root.</span><br></pre></td></tr></table></figure><br>然后回到bo窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r bo</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装SteamCMD和BO服务端"><a href="#安装SteamCMD和BO服务端" class="headerlink" title="安装SteamCMD和BO服务端"></a>安装SteamCMD和BO服务端</h2><p>打开根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br></pre></td></tr></table></figure><br>新建一个名为st的文件夹用来下载SteamCMD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir st</span><br></pre></td></tr></table></figure><br>打开st文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /st</span><br></pre></td></tr></table></figure><br>下载SteamCMD<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz &amp;&amp; tar -xf steamcmd_linux.tar.gz &amp;&amp; rm -f steamcmd_linux.tar.gz</span><br></pre></td></tr></table></figure><br>安装lib32stdc++6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y lib32stdc++6</span><br></pre></td></tr></table></figure><br>运行SteamCMD<br>第一次运行steamcmd会自动更新，如果更新非常慢，可以按Ctrl+C结束进程，然后再次运行。更新完后，输入quit并回车，退出steamcmd。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./steamcmd.sh</span><br></pre></td></tr></table></figure><br>把BO服务端安装在/bo目录<br>以后BO客户端有更新的话，记得回来用下面这条命令更新服务端，如果更新非常慢，可以按Ctrl+C结束进程，然后再次运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./steamcmd.sh +login anonymous +force_install_dir /bo +app_update 416880 validate +quit</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改BO服务端参数"><a href="#修改BO服务端参数" class="headerlink" title="修改BO服务端参数"></a>修改BO服务端参数</h2><p>打开服务端目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /bo</span><br></pre></td></tr></table></figure><br>修改服务端参数文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi config.txt</span><br></pre></td></tr></table></figure><br>按一下键盘的i键进入插入模式（左下角会出现– INSERT –的字样）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"># Ballistic Overkill Dedicated Server Configuration File</span><br><span class="line"># After changing any configuration you must restart the server to take effect# Server name as listed in server browser</span><br><span class="line"># 在服务器列表中显示的服务器名称。别填中文，服务器会出错，可以填英文、数字、符号。</span><br><span class="line">ServerName=China Guangzhou Server</span><br><span class="line"></span><br><span class="line"># UDP Server port 服务器端口</span><br><span class="line">ServerPort=27015</span><br><span class="line"></span><br><span class="line"># Server Query Port 服务器查询端口</span><br><span class="line">QueryPort=27016</span><br><span class="line"></span><br><span class="line"># Max players 玩家人数上限</span><br><span class="line"># Valid values are from 2 to 16</span><br><span class="line"># 根据服务器上行带宽来决定玩家人数上限，1Mbps可以带10个玩家，2Mbps带12个玩家，3Mbps带14个玩家</span><br><span class="line"># 这里是1M带宽的机子，所以我填10</span><br><span class="line">MaxPlayers=10</span><br><span class="line"></span><br><span class="line"># Max Spectators 观众人数上限，观众也是会吃带宽的，建议设置为2</span><br><span class="line">MaxSpectators=2</span><br><span class="line"></span><br><span class="line"># Max ping (in miliseconds)</span><br><span class="line"># When the clients ping is greater than MaxPing he will be kicked from the server</span><br><span class="line"># Use 0 (zero) to turn it off.</span><br><span class="line"># 如果Ping延迟超过这个值，服务器就会踢人，默认为0，即关闭高延迟踢人功能</span><br><span class="line">MaxPing=0</span><br><span class="line"></span><br><span class="line"># Start game map 首次运行的地图，随便填，反正下一局又会重新投票</span><br><span class="line"># Valid values are:</span><br><span class="line"># 1: Corporate Park</span><br><span class="line"># 2: Hollow</span><br><span class="line"># 3: Sunnsquare Mall</span><br><span class="line"># 4: Nox Museum</span><br><span class="line"># 5: Wonderdome</span><br><span class="line"># 7: Citadel</span><br><span class="line"># 8: Overhead</span><br><span class="line"># 9: Blackfield</span><br><span class="line"># 10: Hakim</span><br><span class="line">GameMap=3</span><br><span class="line"></span><br><span class="line"># Game mode 首次运行的游戏模式，随便填，反正下一局又会重新投票</span><br><span class="line"># Valid values are:</span><br><span class="line"># 1: Team Deatchmatch</span><br><span class="line"># 2: Conquest</span><br><span class="line"># 3: King of the Hill</span><br><span class="line"># 5: Free for all</span><br><span class="line">GameMode=1</span><br><span class="line"></span><br><span class="line"># MatchTime 每局时长，默认为10分钟</span><br><span class="line"># value in minutes</span><br><span class="line">MatchTime=10</span><br><span class="line"></span><br><span class="line"># Password 服务器密码，私人比赛时可以加密码。默认留空，无密码。</span><br><span class="line"># Set an Password to only selected players be able to enter in your match</span><br><span class="line">Password=</span><br><span class="line"></span><br><span class="line">#DedicatedBroadcast &lt;strong&gt;服务器类型，默认0，但是一定要改为1&lt;/strong&gt;</span><br><span class="line"># 0: P2P Broadcast (Hybrid) 混合服务器</span><br><span class="line"># 1: Server Broadcast (ServerOnly) 专用服务器</span><br><span class="line">DedicatedBroadcast=1</span><br><span class="line"></span><br><span class="line"># Banner shown when the client is logging into the server 服务器横幅图像，默认留空</span><br><span class="line"># Valid types are JPG and PNG</span><br><span class="line"># Image size is 328x82 pixels</span><br><span class="line"># Sample Url: http://i.imgur.com/TZyeCgt.png</span><br><span class="line">BannerURL=</span><br><span class="line"># URL to open when the user clicks over the banner 点击服务器横幅图像后跳转的网址，默认留空</span><br><span class="line"># Sample Url: http://google.com</span><br><span class="line">ClickURL=</span><br></pre></td></tr></table></figure></p>
+<p>改完之后按一下键盘Esc退出插入模式，然后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure><br>即可保存config.txt文件并关闭vim<br>如果你不想修改，或者改错了，可以输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q!</span><br></pre></td></tr></table></figure><br>强制退出而不保存</p>
+<h2 id="运行服务端"><a href="#运行服务端" class="headerlink" title="运行服务端"></a>运行服务端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./BODS.sh</span><br></pre></td></tr></table></figure>
+<p>最后按Ctrl+A，松开手，再按一下D，就能让bo窗口在后台运行了</p>
+<h2 id="手动更新服务端"><a href="#手动更新服务端" class="headerlink" title="手动更新服务端"></a>手动更新服务端</h2><p>当游戏客户端更新时，服务端一般也要更新，否则玩家更新后进不了服务器<br>先回到bo窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r bo</span><br></pre></td></tr></table></figure><br>按Ctrl+C结束进程<br>然后更新客户端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /st</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./steamcmd.sh +login anonymous +force_install_dir /bo +app_update 416880 validate +quit</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /bo</span><br></pre></td></tr></table></figure><br>更新后config.txt文件可能会被覆盖，你需要重新修改并保存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi config.txt</span><br></pre></td></tr></table></figure><br>最后重新运行服务端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./BODS.sh</span><br></pre></td></tr></table></figure></p>
+<h2 id="自动更新服务端"><a href="#自动更新服务端" class="headerlink" title="自动更新服务端"></a>自动更新服务端</h2><p>是不是觉得手动更新比较麻烦？<br>那么我们直接用自动脚本来帮我们定时升级<br>新建一个auto.sh在/st目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /st/auto.sh</span><br></pre></td></tr></table></figure><br>按i进入插入模式，复制下面这段文字进去，然后按Esc，输入:wq保存并退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">killall screen</span><br><span class="line">mv -f /bo/config.txt /st/config.bak</span><br><span class="line">cd /st</span><br><span class="line">./steamcmd.sh +login anonymous +force_install_dir /bo +app_update 416880 validate +quit</span><br><span class="line">mv -f /st/config.bak /bo/config.txt</span><br><span class="line">session_name=$&quot;bo&quot;</span><br><span class="line">screen -dmS $session_name</span><br><span class="line">cmd=$&quot;/bo/BODS.x86 -batchmode -nographics -logfile /bo/output.txt&quot;</span><br><span class="line">screen -x -S $session_name -p 0 -X stuff &quot;$cmd&quot;</span><br><span class="line">screen -x -S $session_name -p 0 -X stuff $&apos;\n&apos;</span><br></pre></td></tr></table></figure><br>给auto.sh添加可执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x /st/auto.sh</span><br></pre></td></tr></table></figure><br>安装crontab计划任务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y cron</span><br></pre></td></tr></table></figure><br>编辑计划任务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure><br>它会提示你选一个编辑器来编辑，我们已经学会用vim了，所以选2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Select an editor. To change later, run &apos;select-editor&apos;.</span><br><span class="line">1. /bin/nano</span><br><span class="line">2. /usr/bin/vim.basic</span><br><span class="line">3. /usr/bin/vim.tiny</span><br><span class="line">Choose 1-3 [1]: 2</span><br></pre></td></tr></table></figure><br>按i进入插入模式，把这句复制到最下面(意思是每天早上6点定时执行更新脚本)，然后按Esc，输入:wq保存并退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 6 * * * /st/auto.sh</span><br></pre></td></tr></table></figure></p>
+<h2 id="进阶：同时运行多个服务端"><a href="#进阶：同时运行多个服务端" class="headerlink" title="进阶：同时运行多个服务端"></a>进阶：同时运行多个服务端</h2><p>如果服务器带宽充足，CPU双线程以上，可以考虑运行多个服务端，具体服务器人数上限请根据前面的说明自己估算。<br>个人建议：<br>4Mbps=12人+12人<br>5Mbps=14人+14人<br>6Mbps=16人+12人=12人×3<br>7Mbps=16人+14人<br>8Mbps=16人+16人=12人×4</p>
+<p>下面以运行3个服务端为例，你必须修改/b2/config.txt里面的ServerName，ServerPort，QueryPort这三个参数，不能与/bo/config.txt的参数相同，否则会冲突，/b3/config.txt同理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /st/auto.sh</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">killall screen</span><br><span class="line">mv -f /bo/config.txt /st/config.bak</span><br><span class="line">mv -f /b2/config.txt /st/config.bak2</span><br><span class="line">mv -f /b3/config.txt /st/config.bak3</span><br><span class="line">rm -rf /b2</span><br><span class="line">rm -rf /b3</span><br><span class="line">cd /st</span><br><span class="line">./steamcmd.sh +login anonymous +force_install_dir /bo +app_update 416880 validate +quit</span><br><span class="line">cp -f -R /bo /b2</span><br><span class="line">cp -f -R /bo /b3</span><br><span class="line">mv -f /st/config.bak /bo/config.txt</span><br><span class="line">mv -f /st/config.bak2 /b2/config.txt</span><br><span class="line">mv -f /st/config.bak3 /b3/config.txt</span><br><span class="line">session1=$&quot;bo&quot;</span><br><span class="line">session2=$&quot;b2&quot;</span><br><span class="line">session3=$&quot;b3&quot;</span><br><span class="line">screen -dmS $session1</span><br><span class="line">screen -dmS $session2</span><br><span class="line">screen -dmS $session3</span><br><span class="line">cmd1=$&quot;/bo/BODS.x86 -batchmode -nographics -logfile /bo/output.txt&quot;</span><br><span class="line">cmd2=$&quot;/b2/BODS.x86 -batchmode -nographics -logfile /b2/output.txt&quot;</span><br><span class="line">cmd3=$&quot;/b3/BODS.x86 -batchmode -nographics -logfile /b3/output.txt&quot;</span><br><span class="line">screen -x -S $session1 -p 0 -X stuff &quot;$cmd1&quot;</span><br><span class="line">screen -x -S $session1 -p 0 -X stuff $&apos;\n&apos;</span><br><span class="line">screen -x -S $session2 -p 0 -X stuff &quot;$cmd2&quot;</span><br><span class="line">screen -x -S $session2 -p 0 -X stuff $&apos;\n&apos;</span><br><span class="line">screen -x -S $session3 -p 0 -X stuff &quot;$cmd3&quot;</span><br><span class="line">screen -x -S $session3 -p 0 -X stuff $&apos;\n&apos;</span><br></pre></td></tr></table></figure></p>
+<p>如果是运行4个服务端，同理。注意，4个服务端非常消耗CPU性能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">killall screen</span><br><span class="line">mv -f /bo/config.txt /st/config.bak</span><br><span class="line">mv -f /b2/config.txt /st/config.bak2</span><br><span class="line">mv -f /b3/config.txt /st/config.bak3</span><br><span class="line">mv -f /b4/config.txt /st/config.bak4</span><br><span class="line">rm -rf /b2</span><br><span class="line">rm -rf /b3</span><br><span class="line">rm -rf /b4</span><br><span class="line">cd /st</span><br><span class="line">./steamcmd.sh +login anonymous +force_install_dir /bo +app_update 416880 validate +quit</span><br><span class="line">cp -f -R /bo /b2</span><br><span class="line">cp -f -R /bo /b3</span><br><span class="line">cp -f -R /bo /b4</span><br><span class="line">mv -f /st/config.bak /bo/config.txt</span><br><span class="line">mv -f /st/config.bak2 /b2/config.txt</span><br><span class="line">mv -f /st/config.bak3 /b3/config.txt</span><br><span class="line">mv -f /st/config.bak4 /b4/config.txt</span><br><span class="line">session1=$&quot;bo&quot;</span><br><span class="line">session2=$&quot;b2&quot;</span><br><span class="line">session3=$&quot;b3&quot;</span><br><span class="line">session4=$&quot;b4&quot;</span><br><span class="line">screen -dmS $session1</span><br><span class="line">screen -dmS $session2</span><br><span class="line">screen -dmS $session3</span><br><span class="line">screen -dmS $session4</span><br><span class="line">cmd1=$&quot;/bo/BODS.x86 -batchmode -nographics -logfile /bo/output.txt&quot;</span><br><span class="line">cmd2=$&quot;/b2/BODS.x86 -batchmode -nographics -logfile /b2/output.txt&quot;</span><br><span class="line">cmd3=$&quot;/b3/BODS.x86 -batchmode -nographics -logfile /b3/output.txt&quot;</span><br><span class="line">cmd4=$&quot;/b4/BODS.x86 -batchmode -nographics -logfile /b4/output.txt&quot;</span><br><span class="line">screen -x -S $session1 -p 0 -X stuff &quot;$cmd1&quot;</span><br><span class="line">screen -x -S $session1 -p 0 -X stuff $&apos;\n&apos;</span><br><span class="line">screen -x -S $session2 -p 0 -X stuff &quot;$cmd2&quot;</span><br><span class="line">screen -x -S $session2 -p 0 -X stuff $&apos;\n&apos;</span><br><span class="line">screen -x -S $session3 -p 0 -X stuff &quot;$cmd3&quot;</span><br><span class="line">screen -x -S $session3 -p 0 -X stuff $&apos;\n&apos;</span><br><span class="line">screen -x -S $session4 -p 0 -X stuff &quot;$cmd4&quot;</span><br><span class="line">screen -x -S $session4 -p 0 -X stuff $&apos;\n&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://steamcommunity.com/app/296300/discussions/1/135508662495143639/" target="_blank" rel="noopener">[TUTORIAL] Dedicated Server ( Windows | Linux )</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/硝云弹雨/" rel="tag"># 硝云弹雨</a>
+          
+            <a href="/tags/Ballistic-Overkill/" rel="tag"># Ballistic Overkill</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/originfixbat/" rel="next" title="Origin“意料之外的事情”一键修复脚本">
+                <i class="fa fa-chevron-left"></i> Origin“意料之外的事情”一键修复脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/padavan/" rel="prev" title="newifi mini路由器刷padavan固件教程">
+                newifi mini路由器刷padavan固件教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">苹罐</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接服务器"><span class="nav-number">2.</span> <span class="nav-text">连接服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改DNS地址"><span class="nav-number">3.</span> <span class="nav-text">修改DNS地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改Debian8软件源为163源"><span class="nav-number">4.</span> <span class="nav-text">修改Debian8软件源为163源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装使用screen"><span class="nav-number">5.</span> <span class="nav-text">安装使用screen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装SteamCMD和BO服务端"><span class="nav-number">6.</span> <span class="nav-text">安装SteamCMD和BO服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改BO服务端参数"><span class="nav-number">7.</span> <span class="nav-text">修改BO服务端参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行服务端"><span class="nav-number">8.</span> <span class="nav-text">运行服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动更新服务端"><span class="nav-number">9.</span> <span class="nav-text">手动更新服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动更新服务端"><span class="nav-number">10.</span> <span class="nav-text">自动更新服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶：同时运行多个服务端"><span class="nav-number">11.</span> <span class="nav-text">进阶：同时运行多个服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">12.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苹罐</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
