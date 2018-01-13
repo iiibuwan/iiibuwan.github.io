@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[国行A3004NS刷机教程]]></title>
+    <url>%2F2018%2Fa3004ns%2F</url>
+    <content type="text"><![CDATA[首先我们需要先下载好三个文件，第一个是荒野无灯的直刷固件，文件名是STOCK_ROM_UPGRADE_A3004NS_3.4.3.9-099_20170307-0247.trx，第二个是hackpascal的Breed，文件名是breed-mt7621-totolink-a3004ns.bin，第三个是hiboy的固件,文件名是A3004NS_3.4.3.9-099.trx路由器LAN口网线连接电脑，然后开始刷机浏览器打开http://192.168.0.1/ 用户名admin，密码admin点击软件升级，刷入STOCK_ROM_UPGRADE_A3004NS_3.4.3.9-099_20170307-0247.trx等刷完之后，使用Xshell或者PuTTY连接路由器SSH地址192.168.88.1，端口22，用户名admin(不是root)，密码admin使用Xftp或者WinSCP上传breed-mt7621-totolink-a3004ns.bin到路由器的/tmp目录中然后SSH执行命令mtd_write write /tmp/breed-mt7621-totolink-a3004ns.bin Bootloader拔掉路由器电源，捅RST菊花，同时插上电源，等10秒松开RST电脑浏览器打开http://192.168.1.1/ 就进入breed界面了，如果打不开breed，请把自己的有线网卡改成自动获取IP这时不要急着刷固件，先点击固件备份——EEPROM，下载eeprom.bin到电脑最后点击固件更新，固件选择A3004NS_3.4.3.9-099.trx，EEPROM选择刚刚下载好的eeprom.bin，点击上传，等刷完就行刷好之后看我另一篇文章，如果以后要升级hiboy固件，在固件里点击右上角版本号，自己看说明升级即可]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[在购买Origin access之前应该知道这些]]></title>
     <url>%2F2017%2Fea%2F</url>
     <content type="text"><![CDATA[Origin access（Origin会员）是一种租赁模式，在会员有效期内可以玩绝大部分的Origin老游戏，比单独买游戏要划算很多。支持中国区paypal支付，paypal可以绑定银联卡（除了农行）。暂时不建议跨区买会员，如果客户端老是在转圈的话，建议登陆origin官网购买。购买会员之后，必须使用香港或者台湾IP登陆Origin，然后选取你想玩的游戏入库，否则会没中文。还有一件事就是，Origin会员是会自动续费的，如果下个月不用了，必须进入这个网址取消会员资格，下个月就不会自动扣费。]]></content>
@@ -98,8 +103,8 @@
     <url>%2F2016%2Fssproxifier%2F</url>
     <content type="text"><![CDATA[准备工作：一个稳定可用的55R账号，55R客户端和Proxifier 1.首先运行55R客户端，系统代理模式设置为不经过代理直连，这样会让55R只处理Proxifier的游戏数据，浏览网页是裸连，不经过55R。 2.打开Proxifier，点击右上角配置代理服务器设置 3.点击右边添加. . . 4.地址填127.0.0.1，端口填1080，SOCKS版本是SOCKS 5，然后点确定 5.这里要注意，要点击“否” 6.然后点击确定 7.这里点“是” 8.点“添加” 9.应用程序GTA5.exe; GTAVLauncher.exe; subprocess.exe;目标主机（建议不填）www.google.com;prod.cloud.rockstargames.com;patches.rockstargames.com;prod.telemetry.ros.rockstargames.com;conductor-prod.ros.rockstargames.com;auth-prod.ros.rockstargames.com;prod.p02sjc.pod.rockstargames.com;prod.p01sjc.pod.rockstargames.com;目标端口（建议不填）80;443;动作选择127.0.0.1那个最后点“确定” 10.再点一次“确定” 大功告成，保持55R和proxifier在后台运行，然后运行GTA5即可]]></content>
       <tags>
-        <tag>GTA5</tag>
         <tag>Proxifier</tag>
+        <tag>GTA5</tag>
       </tags>
   </entry>
   <entry>
