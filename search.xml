@@ -103,8 +103,8 @@
     <url>%2F2016%2Fssproxifier%2F</url>
     <content type="text"><![CDATA[准备工作：一个稳定可用的55R账号，55R客户端和Proxifier 1.首先运行55R客户端，系统代理模式设置为不经过代理直连，这样会让55R只处理Proxifier的游戏数据，浏览网页是裸连，不经过55R。 2.打开Proxifier，点击右上角配置代理服务器设置 3.点击右边添加. . . 4.地址填127.0.0.1，端口填1080，SOCKS版本是SOCKS 5，然后点确定 5.这里要注意，要点击“否” 6.然后点击确定 7.这里点“是” 8.点“添加” 9.应用程序GTA5.exe; GTAVLauncher.exe; subprocess.exe;目标主机（建议不填）www.google.com;prod.cloud.rockstargames.com;patches.rockstargames.com;prod.telemetry.ros.rockstargames.com;conductor-prod.ros.rockstargames.com;auth-prod.ros.rockstargames.com;prod.p02sjc.pod.rockstargames.com;prod.p01sjc.pod.rockstargames.com;目标端口（建议不填）80;443;动作选择127.0.0.1那个最后点“确定” 10.再点一次“确定” 大功告成，保持55R和proxifier在后台运行，然后运行GTA5即可]]></content>
       <tags>
-        <tag>Proxifier</tag>
         <tag>GTA5</tag>
+        <tag>Proxifier</tag>
       </tags>
   </entry>
   <entry>
